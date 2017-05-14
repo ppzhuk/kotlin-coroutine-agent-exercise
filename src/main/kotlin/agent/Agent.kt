@@ -6,9 +6,9 @@ import java.lang.instrument.Instrumentation
 import java.security.ProtectionDomain
 
 private object TargetMethod {
-    val ownerClassName = "example/CoroutineExampleKt"
-    val name = "test"
-    val descr = "(Lkotlin/coroutines/experimental/Continuation;)Ljava/lang/Object;"
+    private val ownerClassName = "example/CoroutineExampleKt"
+    private val name = "test"
+    private val descr = "(Lkotlin/coroutines/experimental/Continuation;)Ljava/lang/Object;"
 
     fun isTargetMethodCall(opcode: Int, owner: String, name: String, desc: String, itf: Boolean) =
             opcode == Opcodes.INVOKESTATIC &&
